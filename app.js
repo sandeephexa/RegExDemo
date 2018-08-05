@@ -1,49 +1,39 @@
-// form blur event listeners
-document.getElementById('name').addEventListener('blur',validateName);
-document.getElementById('zip').addEventListener('blur',validateZip);
-document.getElementById('phone').addEventListener('blur',validatePhone);
-document.getElementById('email').addEventListener('blur',validateEmail);
+let re;
 
-function validateName(){
- const name = document.getElementById('name');
- var re = /^[a-zA-Z]{2,10}$/;
+re = /hello/i;  // i = case insensitive
 
- if(!re.test(name.value)){
-     name.classList.add('is-invalid');
- }else{
-    name.classList.remove('is-invalid');
- }
-}
+//re = /hello/g; // g = Global search
 
-function validateZip(){
-    const zip = document.getElementById('zip');
-    var re = /^[0-9]{5}(-[0-9]{4})?$/;
-   
-    if(!re.test(zip.value)){
-        zip.classList.add('is-invalid');
-    }else{
-       zip.classList.remove('is-invalid');
-    }
-}
+// Exec() function
 
-function validatePhone(){
-    const phone = document.getElementById('phone');
-    var re = /^\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$/;
-   
-    if(!re.test(phone.value)){
-        phone.classList.add('is-invalid');
-    }else{
-       phone.classList.remove('is-invalid');
-    }
-}
+// const result = re.exec('hello world');
 
-function validateEmail(){
-    const email = document.getElementById('email');
-    var re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-   
-    if(!re.test(email.value)){
-        email.classList.add('is-invalid');
-    }else{
-       email.classList.remove('is-invalid');
-    }
-}
+// console.log(result);
+// console.log(result[0]);
+// console.log(result.index);
+// console.log(result.input);
+
+// Test() function
+
+// var result = re.test('Hello world');
+// console.log(result); // returns true/false
+
+// Match() function
+
+// var str = 'Hello world';
+// var result = str.match(re);
+
+// console.log(result);
+
+// Search() function returns index of first match if not returns -1
+
+// var str = 'hello world';
+// var result = str.search(re);
+// console.log(result);
+
+// replace() function return a new string with some or all matches of a pattern
+
+// var str = 'hello there';
+// var result = str.replace(re,'hi');
+// console.log(result);
+
